@@ -138,7 +138,7 @@ Ví dụ phản hồi:
 1. Đảm bảo bạn có tệp mô hình đã huấn luyện (`model.pkl`) trong thư mục Lab2
 2. Khởi động dịch vụ:
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 API sẽ có sẵn tại `http://localhost:5000`
