@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Configuration
-DOCKER_USERNAME="your-dockerhub-username"  # Replace with your Docker Hub username
+DOCKER_USERNAME="Maikusobu"  # Replace with your Docker Hub username
 REMOTE_SERVER="100.114.94.56"
 REMOTE_USER="mlops"
 APP_NAME="weather-prediction"
-REMOTE_DIR="/home/mlops/mlops-lab1/Lab2"
+REMOTE_DIR="/home/mlops/mlops-lab1/Demo"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -37,8 +37,8 @@ scp docker-compose.yml .env ${REMOTE_USER}@${REMOTE_SERVER}:${REMOTE_DIR}/
 # Deploy on remote server
 echo -e "${GREEN}Deploying on remote server...${NC}"
 ssh ${REMOTE_USER}@${REMOTE_SERVER} "cd ${REMOTE_DIR} && \
-    docker-compose pull && \
-    docker-compose up -d"
+    docker compose pull && \
+    docker compose up -d"
 
 echo -e "${GREEN}Deployment completed successfully!${NC}"
 echo -e "Your application should now be running at http://${REMOTE_SERVER}:5000" 
