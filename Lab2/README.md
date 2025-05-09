@@ -53,7 +53,7 @@ curl -X POST http://localhost:5000/predict \
     "Pressure3pm": 1013.0,
     "Temp9am": 22.0,
     "Temp3pm": 24.0,
-    "RainToday": 0.0
+    "RainToday": "No"
   }'
 ```
 
@@ -80,7 +80,7 @@ curl -X POST http://localhost:5000/predict \
     "Pressure3pm": 1007.1,
     "Temp9am": 16.9,
     "Temp3pm": 21.8,
-    "RainToday": 0
+    "RainToday": "No"
   }'
 ```
 

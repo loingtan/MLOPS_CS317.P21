@@ -124,7 +124,7 @@ def predict():
         probability = model.predict_proba(processed_data)[:, 1]
 
         return jsonify({
-            'prediction': str(prediction[0]),
+            'prediction': bool(prediction[0]),
             'probability': float(probability[0])
         })
 
