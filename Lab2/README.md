@@ -3,7 +3,7 @@
 Thư mục này chứa triển khai của một API phục vụ mô hình dự đoán thời tiết Úc được phát triển trong Lab1.
 
 ## Demo
-[Link Demo](https://drive.google.com/file/d/1B2tRoEtk104akju5LS1ywv-PArg7546M/view?usp=sharing)
+[Link Demo](https://drive.google.com/file/d/1wWhVJByaO0OpxF4zHl9UfbqDNgF96dZk/view?usp=sharing)
 
 ## Tổng quan
 
