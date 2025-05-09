@@ -100,7 +100,6 @@ class MetaflowTrainingPipeline(FlowSpec):
     RANDOM_STATE = 42
     DATASET_PATH = './dataset/weatherAUS.csv'
     def hpo_objective(self, trial, X_train_processed, y_train_hpo, X_val_processed, y_val_hpo):
-
         with mlflow.start_run(nested=True) as nested_run:
             logreg_C = trial.suggest_float("C", 1e-4, 1e2, log=True)
             solver = trial.suggest_categorical("solver", ["liblinear", "saga"])
@@ -114,7 +113,6 @@ class MetaflowTrainingPipeline(FlowSpec):
             mlflow.set_tag("OptunaTrial_penalty", penalty)
             mlflow.set_tag("mlflow.runName", f"OptunaTrial_{trial.number}_{solver}_C={logreg_C:.4f}") # More descriptive run name
             mlflow.set_tag("Status", "In Progress")
-            
             mlflow.log_params({
                 "C": logreg_C,
                 "solver": solver,
@@ -241,7 +239,7 @@ class MetaflowTrainingPipeline(FlowSpec):
     @step
     def preprocess_data(self):
         """
-        Preprocess Step: Define and fit the preprocessing pipeline ONLY on training data.
+        Preprocess Step: Define and fit the preprocess  ing pipeline ONLY on training data.
         Transform train, validation, and test sets. Log the preprocessor with explicit signature.
         """
         print("\n--- Step: Preprocess Data ---")
@@ -252,7 +250,6 @@ class MetaflowTrainingPipeline(FlowSpec):
             self.X_train.loc[:, raintoday_col + '_coded'] = self.X_train[raintoday_col].map(raintoday_map)
             self.X_val.loc[:, raintoday_col + '_coded'] = self.X_val[raintoday_col].map(raintoday_map)
             self.X_test.loc[:, raintoday_col + '_coded'] = self.X_test[raintoday_col].map(raintoday_map)
-
             rain_today_mode = self.X_train[raintoday_col + '_coded'].mode()[0]
             print(f"  Imputing NaNs in '{raintoday_col}_coded' with mode from train set: {rain_today_mode}")
             self.X_train[raintoday_col + '_coded'].fillna(rain_today_mode, inplace=True)
@@ -299,7 +296,6 @@ class MetaflowTrainingPipeline(FlowSpec):
             remainder='passthrough',
             verbose_feature_names_out=False
         )
-
         print("Fitting preprocessor on training data ONLY...")
         self.preprocessor.fit(self.X_train)
         print("Preprocessor fitted.")
@@ -382,7 +378,6 @@ class MetaflowTrainingPipeline(FlowSpec):
 
     @step
     def tune_hyperparameters(self):
-     
         print(f"\n--- Step: Tune Hyperparameters ({self.n_trials} trials) ---")
         with mlflow.start_run(run_id=self.main_mlflow_run_id, nested=False) as parent_run:
             mlflow.set_tag("step_hpo", "In Progress")
