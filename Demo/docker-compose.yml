@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  flask-app:
+    image: ${DOCKER_USERNAME}/weather-prediction:latest
+    ports:
+      - "5000:5000"
+    restart: always
+    environment:
+      - FLASK_ENV=production
+
+networks:
+  mlops-network:
+    driver: bridge
