@@ -1,0 +1,51 @@
+# Create preprocessing directory if it doesn't exist
+New-Item -ItemType Directory -Force -Path app\preprocessing
+
+# Copy model files from Lab 2
+Write-Host "Copying model files from Lab 2..."
+Copy-Item -Path ..\Lab2\model.pkl -Destination app\ -ErrorAction SilentlyContinue
+if (-not $?) {
+    Write-Warning "model.pkl not found in Lab 2"
+}
+
+New-Item -ItemType Directory -Force -Path app\preprocessing
+Copy-Item -Path ..\Lab2\preprocessing\model.pkl -Destination app\preprocessing\ -ErrorAction SilentlyContinue
+if (-not $?) {
+    Write-Warning "preprocessing model not found in Lab 2"
+}
+
+$choice = Read-Host "Start the monitoring stack now? (y/n)"
+
+if ($choice -eq "y" -or $choice -eq "Y") {
+    # Start the monitoring stack (only monitoring services)
+    Write-Host "Starting monitoring stack..."
+    docker-compose up -d
+
+    Write-Host "Monitoring services starting:"
+    Write-Host "- Prometheus: http://localhost:9090"
+    Write-Host "- Grafana: http://localhost:3000 (admin/admin)"
+    Write-Host "- AlertManager: http://localhost:9093"
+
+    # Wait for services to start
+    Write-Host "Waiting for services to start..."
+    Start-Sleep -Seconds 10
+
+    # Check if services are up
+    Write-Host "Checking if services are running..."
+    docker-compose ps
+}
+
+Write-Host ""
+Write-Host "Setup complete!"
+Write-Host ""
+Write-Host "To run the Flask application, use:"
+Write-Host "    .\run_app.ps1"
+Write-Host ""
+Write-Host "The Weather Prediction API will be available at http://localhost:5000"
+Write-Host "The metrics endpoint will be available at http://localhost:5000/metrics"
+Write-Host ""
+Write-Host "For a full monitoring experience:"
+Write-Host "1. Start the monitoring stack: docker-compose up -d"
+Write-Host "2. Run the Flask app: .\run_app.ps1"
+Write-Host "3. Open Grafana at http://localhost:3000 and log in with admin/admin"
+Write-Host "4. View the 'Weather Prediction API Dashboard' for real-time metrics"
