@@ -8,7 +8,7 @@ echo ""
 
 # Check if the API is running
 echo "Checking if the API is running..."
-if ! curl -s http://localhost:5000/health > /dev/null; then
+if ! curl -s http://localhost:5050/health > /dev/null; then
     echo "❌ API is not running. Please start the API first with ./run_app.sh"
     echo "Exiting..."
     exit 1
@@ -48,6 +48,6 @@ echo "🚨 AlertManager: http://localhost:9093"
 echo "📝 Fluent Bit: http://localhost:2020"
 echo ""
 echo "To see the complete metrics from the API, visit:"
-echo "http://localhost:5000/metrics"
+echo "http://localhost:5050/metrics"
 echo ""
 echo "==================================================================="

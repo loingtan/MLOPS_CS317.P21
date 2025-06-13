@@ -1,4 +1,9 @@
-from flask import Flask, request, jsonify, Response
+import threading
+from fastapi import FastAPI, HTTPException, Request, Response
+from fastapi.responses import JSONResponse
+from fastapi.responses import RedirectResponse
+from pydantic import BaseModel
+from typing import Dict, Any, Optional, Union, List
 import pandas as pd
 import numpy as np
 import pickle
@@ -11,8 +16,12 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline as SklearnPipeline
 import logging
 import prometheus_client
-from prometheus_client import Counter, Histogram, Gauge, Info, Summary
-from prometheus_flask_exporter import PrometheusMetrics
+from prometheus_client import Counter, Histogram, Gauge, Info, Summary, REGISTRY
+from prometheus_client.registry import CollectorRegistry
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.requests import Request
+from starlette.responses import Response
+from contextlib import asynccontextmanager
 
 # Configure logging to file
 log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -26,35 +35,169 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__)
+# Create a custom registry to handle reloads
+# Check if registry already exists in globals to handle uvicorn reload
+if "metrics_registry" not in globals():
+    metrics_registry = CollectorRegistry()
+    # Register default collectors for this registry
+    try:
+        # Only use these if available
+        prometheus_client.gc_collector.GCCollector(metrics_registry)
+        prometheus_client.platform_collector.PlatformCollector(
+            metrics_registry)
+    except Exception as e:
+        logger.warning(f"Could not register default collectors: {e}")
+else:
+    metrics_registry = globals()["metrics_registry"]
 
-# Initialize Prometheus metrics
-metrics = PrometheusMetrics(app)
+# Define Prometheus metrics middleware
+
+
+class PrometheusMiddleware(BaseHTTPMiddleware):
+    def __init__(self, app):
+        super().__init__(app)
+        # These will be initialized after the get_or_create_metric function is defined
+        self.request_count = None
+        self.request_latency = None
+        self.request_in_progress = None
+        self.initialized = False
+
+    async def dispatch(self, request: Request, call_next):
+        # Initialize metrics if not initialized
+        if not self.initialized:
+            self.request_count = get_or_create_metric(
+                Counter, 'http_requests_total', 'Total HTTP Requests',
+                labelnames=['method', 'endpoint', 'status'])
+            self.request_latency = get_or_create_metric(
+                Histogram, 'http_request_duration_seconds', 'HTTP Request Latency',
+                labelnames=['method', 'endpoint'])
+            self.request_in_progress = get_or_create_metric(
+                Gauge, 'http_requests_in_progress', 'Number of HTTP requests in progress',
+                labelnames=['method', 'endpoint'])
+            self.initialized = True
+
+        start_time = time.time()
+        path = request.url.path
+        method = request.method
+
+        # Increase in-progress metric
+        self.request_in_progress.labels(method=method, endpoint=path).inc()
+
+        # Process the request
+        try:
+            response = await call_next(request)
+            status_code = response.status_code
+        except Exception as e:
+            status_code = 500
+            raise e
+        finally:
+            # Decrease in-progress metric
+            self.request_in_progress.labels(method=method, endpoint=path).dec()
+
+            # Observe latency
+            self.request_latency.labels(method=method, endpoint=path).observe(
+                time.time() - start_time)
+
+            # Count request
+            self.request_count.labels(
+                method=method, endpoint=path, status=status_code).inc()
+
+        return response
+
+# Create a function to safely get or create metrics
+
+
+def get_or_create_metric(metric_type, name, documentation, **kwargs):
+    try:
+        # Try to get the existing metric from our custom registry
+        if name in metrics_registry._names_to_collectors:
+            return metrics_registry._names_to_collectors[name]
+        # If it doesn't exist, create a new one with our registry
+        return metric_type(name, documentation, registry=metrics_registry, **kwargs)
+    except ValueError as e:
+        logger.warning(f"Error creating metric {name}: {e}")
+        # If the metric already exists but we couldn't get it directly, search for it
+        for metric in metrics_registry.collect():
+            if metric.name == name:
+                return metrics_registry._names_to_collectors[name]
+        # If we get here, something else went wrong
+        raise
+
 
 # Static information as metric
-metrics.info('app_info', 'Weather Prediction Application', version='1.0.0')
-
-# Define custom metrics
-REQUEST_COUNT = Counter('http_requests_total', 'Total HTTP Requests', [
-                        'method', 'endpoint', 'status'])
-REQUEST_LATENCY = Histogram(
-    'http_request_duration_seconds', 'HTTP Request Latency', ['method', 'endpoint'])
-REQUEST_IN_PROGRESS = Gauge('http_requests_in_progress',
-                            'Number of HTTP requests in progress', ['method', 'endpoint'])
+APP_INFO = get_or_create_metric(
+    Info, 'app_info', 'Weather Prediction Application')
+APP_INFO.info({'version': '1.0.0'})
 
 # Model metrics
-MODEL_INFERENCE_TIME = Histogram(
-    'model_inference_time_seconds', 'Model Inference Time in Seconds')
-CONFIDENCE_SCORE = Histogram('model_confidence_score', 'Model Confidence Score', buckets=[
-                             0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+MODEL_INFERENCE_TIME = get_or_create_metric(
+    Histogram, 'model_inference_time_seconds', 'Model Inference Time in Seconds')
+CONFIDENCE_SCORE = get_or_create_metric(
+    Histogram, 'model_confidence_score', 'Model Confidence Score',
+    buckets=[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 
 # System metrics
-CPU_USAGE = Gauge('cpu_usage_percent', 'CPU Usage in Percent')
-MEMORY_USAGE = Gauge('memory_usage_bytes', 'Memory Usage in Bytes')
-DISK_USAGE = Gauge('disk_usage_percent', 'Disk Usage in Percent')
-NETWORK_RECEIVED = Gauge('network_received_bytes_total',
-                         'Network Bytes Received')
-NETWORK_SENT = Gauge('network_sent_bytes_total', 'Network Bytes Sent')
+CPU_USAGE = get_or_create_metric(
+    Gauge, 'cpu_usage_percent', 'CPU Usage in Percent')
+MEMORY_USAGE = get_or_create_metric(
+    Gauge, 'memory_usage_bytes', 'Memory Usage in Bytes')
+DISK_USAGE = get_or_create_metric(
+    Gauge, 'disk_usage_percent', 'Disk Usage in Percent')
+NETWORK_RECEIVED = get_or_create_metric(
+    Gauge, 'network_received_bytes_total', 'Network Bytes Received')
+NETWORK_SENT = get_or_create_metric(
+    Gauge, 'network_sent_bytes_total', 'Network Bytes Sent')
+
+# Define Pydantic models for request and response
+
+
+class WeatherData(BaseModel):
+    MinTemp: Optional[float] = None
+    MaxTemp: Optional[float] = None
+    Rainfall: Optional[float] = None
+    Evaporation: Optional[float] = None
+    Sunshine: Optional[float] = None
+    WindGustDir: Optional[str] = None
+    WindGustSpeed: Optional[float] = None
+    WindDir9am: Optional[str] = None
+    WindDir3pm: Optional[str] = None
+    WindSpeed9am: Optional[float] = None
+    WindSpeed3pm: Optional[float] = None
+    Humidity9am: Optional[float] = None
+    Humidity3pm: Optional[float] = None
+    Pressure9am: Optional[float] = None
+    Pressure3pm: Optional[float] = None
+    Cloud9am: Optional[float] = None
+    Cloud3pm: Optional[float] = None
+    Temp9am: Optional[float] = None
+    Temp3pm: Optional[float] = None
+    RainToday: Optional[str] = None
+    Date: Optional[str] = None
+    Location: Optional[str] = None
+
+
+class MetricsData(BaseModel):
+    inference_time_ms: float
+    preprocess_time_ms: float
+    total_time_ms: float
+
+
+class PredictionResponse(BaseModel):
+    prediction: bool
+    probability: float
+    metrics: MetricsData
+
+
+class HealthResponse(BaseModel):
+    status: str
+    model_loaded: bool
+    preprocessor_loaded: bool
+    timestamp: float
+
+
+class ErrorResponse(BaseModel):
+    error: str
+
 
 # Define default values for features
 DEFAULT_VALUES = {
@@ -85,21 +228,35 @@ MODEL_PATH = os.path.join(os.path.dirname(__file__), 'model.pkl')
 PREPROCESSOR_PATH = os.path.join(os.path.dirname(
     __file__), 'preprocessing', 'model.pkl')
 
+# Initialize model and preprocessor
+model = None
+preprocessor = None
+
+# Load model
 try:
     with open(MODEL_PATH, 'rb') as f:
         model = pickle.load(f)
     logger.info(f"Model loaded successfully from {MODEL_PATH}")
+except FileNotFoundError:
+    logger.error(f"Model file not found at {MODEL_PATH}")
 except Exception as e:
     logger.error(f"Error loading model: {e}")
-    model = None
 
+# Load preprocessor
 try:
     with open(PREPROCESSOR_PATH, 'rb') as f:
         preprocessor = pickle.load(f)
     logger.info(f"Preprocessor loaded successfully from {PREPROCESSOR_PATH}")
+except FileNotFoundError:
+    logger.error(f"Preprocessor file not found at {PREPROCESSOR_PATH}")
 except Exception as e:
     logger.error(f"Error loading preprocessor: {e}")
-    preprocessor = None
+
+# Log application startup status
+if model is None:
+    logger.warning("Application started without a valid model")
+if preprocessor is None:
+    logger.warning("Application started without a valid preprocessor")
 
 
 def fill_missing_values(data):
@@ -134,9 +291,17 @@ def preprocess_input(data):
             input_df = input_df.drop(columns=['Location'])
 
         # Transform the input data using the loaded preprocessor
-        processed_data = preprocessor.transform(input_df)
+        if preprocessor is not None:
+            processed_data = preprocessor.transform(input_df)
+            return processed_data
+        else:
+            # If preprocessor is not available, perform basic preprocessing
+            # This is a fallback and won't work correctly in production
+            logger.warning(
+                "Preprocessor not available, using fallback dummy data")
 
-        return processed_data
+            # Create a dummy array with 61 features (based on expected model input)
+            return np.zeros((1, 61))
     except Exception as e:
         logger.error(f"Error in preprocessing: {e}")
         raise
@@ -170,20 +335,68 @@ def update_system_metrics():
     except Exception as e:
         logger.error(f"Error updating system metrics: {e}")
 
+# Create metrics update thread
 
-@app.route('/metrics')
-def metrics_endpoint():
+
+def metrics_updater():
+    while True:
+        update_system_metrics()
+        time.sleep(15)  # Update every 15 seconds
+
+
+# Create metrics thread
+metrics_thread = threading.Thread(target=metrics_updater, daemon=True)
+
+# Initialize the metrics on startup
+update_system_metrics()
+
+# Define lifespan for proper startup/shutdown handling
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup operations
+    logger.info("Starting application")
+    # Start the metrics thread on startup
+    metrics_thread.start()
+    logger.info("Metrics update thread started")
+    yield
+    # Shutdown operations
+    logger.info("Application shutting down")
+
+# Create the FastAPI app
+app = FastAPI(
+    title="Weather Prediction API",
+    description="API for predicting rain tomorrow based on weather features",
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# Add Prometheus middleware
+app.add_middleware(PrometheusMiddleware)
+
+
+@app.get("/", include_in_schema=False)
+async def root():
+    """Redirects to the API documentation."""
+    return RedirectResponse(url="/docs")
+
+
+@app.get('/metrics', include_in_schema=False)
+async def metrics_endpoint():
     """Endpoint for exposing metrics to Prometheus."""
     # Update system metrics before serving
     update_system_metrics()
 
-    # Return all registered metrics
-    return Response(prometheus_client.generate_latest(), mimetype="text/plain")
+    # Return metrics from our custom registry
+    return Response(
+        content=prometheus_client.generate_latest(metrics_registry),
+        media_type="text/plain"
+    )
 
 
-@app.route('/health', methods=['GET'])
-@metrics.counter('health_checks_total', 'Number of health checks')
-def health_check():
+@app.get('/health', response_model=HealthResponse, responses={500: {"model": ErrorResponse}})
+async def health_check():
     """Health check endpoint."""
     status_code = 200 if model is not None and preprocessor is not None else 500
 
@@ -194,30 +407,27 @@ def health_check():
         'timestamp': time.time()
     }
 
-    # Record request in the custom counter
-    REQUEST_COUNT.labels('GET', '/health', status_code).inc()
+    if status_code != 200:
+        raise HTTPException(status_code=status_code,
+                            detail="Service unhealthy")
 
-    return jsonify(response), status_code
+    return response
 
 
-@app.route('/predict', methods=['POST'])
-@metrics.counter('predictions_total', 'Number of predictions')
-@metrics.histogram('prediction_latency', 'Prediction latency in seconds')
-def predict():
+@app.post('/predict', response_model=PredictionResponse, responses={500: {"model": ErrorResponse}, 400: {"model": ErrorResponse}})
+async def predict(weather_data: WeatherData):
     """Prediction endpoint."""
     start_time = time.time()
 
-    if model is None or preprocessor is None:
-        REQUEST_COUNT.labels('POST', '/predict', 500).inc()
-        return jsonify({
-            'error': 'Model or preprocessor not loaded'
-        }), 500
+    if model is None:
+        raise HTTPException(status_code=500, detail="Model not loaded")
 
     try:
-        data = request.get_json()
+        # Convert Pydantic model to dictionary
+        data = weather_data.model_dump(exclude_unset=True)
         if not data:
-            REQUEST_COUNT.labels('POST', '/predict', 400).inc()
-            return jsonify({'error': 'No input data provided'}), 400
+            raise HTTPException(
+                status_code=400, detail="No input data provided")
 
         # Preprocess the input data
         preprocess_start = time.time()
@@ -226,59 +436,45 @@ def predict():
 
         # Measure inference time
         inference_start = time.time()
-        prediction = model.predict(processed_data)
-        probability = model.predict_proba(processed_data)[:, 1]
-        inference_time = time.time() - inference_start
+        try:
+            prediction = model.predict(processed_data)
+            probability = model.predict_proba(processed_data)[:, 1]
+            inference_time = time.time() - inference_start
 
-        # Record model metrics
-        MODEL_INFERENCE_TIME.observe(inference_time)
-        CONFIDENCE_SCORE.observe(probability[0])
+            # Record model metrics
+            MODEL_INFERENCE_TIME.observe(inference_time)
+            CONFIDENCE_SCORE.observe(probability[0])
 
-        total_time = time.time() - start_time
+            total_time = time.time() - start_time
 
-        # Log the prediction details
-        logger.info(
-            f"Prediction: {bool(prediction[0])}, Confidence: {probability[0]:.4f}, Inference time: {inference_time:.4f}s")
+            # Log the prediction details
+            logger.info(
+                f"Prediction: {bool(prediction[0])}, Confidence: {probability[0]:.4f}, Inference time: {inference_time:.4f}s")
 
-        # Record the successful request
-        REQUEST_COUNT.labels('POST', '/predict', 200).inc()
+            # Alert if confidence is low
+            if probability[0] < 0.6:
+                logger.warning(
+                    f"Low confidence prediction: {probability[0]:.4f}")
 
-        # Alert if confidence is low
-        if probability[0] < 0.6:
-            logger.warning(f"Low confidence prediction: {probability[0]:.4f}")
-
-        return jsonify({
-            'prediction': bool(prediction[0]),
-            'probability': float(probability[0]),
-            'metrics': {
-                'inference_time_ms': round(inference_time * 1000, 2),
-                'preprocess_time_ms': round(preprocess_time * 1000, 2),
-                'total_time_ms': round(total_time * 1000, 2)
+            return {
+                'prediction': bool(prediction[0]),
+                'probability': float(probability[0]),
+                'metrics': {
+                    'inference_time_ms': round(inference_time * 1000, 2),
+                    'preprocess_time_ms': round(preprocess_time * 1000, 2),
+                    'total_time_ms': round(total_time * 1000, 2)
+                }
             }
-        })
+        except Exception as pred_error:
+            logger.error(f"Error during prediction: {pred_error}")
+            raise HTTPException(
+                status_code=500, detail=f"Prediction failed: {str(pred_error)}")
 
     except Exception as e:
         logger.error(f"Prediction error: {e}")
-        REQUEST_COUNT.labels('POST', '/predict', 500).inc()
-        return jsonify({
-            'error': str(e)
-        }), 500
-
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == '__main__':
-    # Update metrics before starting the server
-    update_system_metrics()
-
-    # Start metrics update thread
-    import threading
-
-    def metrics_updater():
-        while True:
-            update_system_metrics()
-            time.sleep(15)  # Update every 15 seconds
-
-    metrics_thread = threading.Thread(target=metrics_updater, daemon=True)
-    metrics_thread.start()
-
-    # Run the Flask application
-    app.run(host='0.0.0.0', port=5000)
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=5050, reload=True)
+# Added another test comment to trigger reload

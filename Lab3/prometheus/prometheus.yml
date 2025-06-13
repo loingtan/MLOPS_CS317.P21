@@ -10,22 +10,21 @@ alerting:
             - alertmanager:9093
 
 rule_files:
-  - /etc/prometheus/rules/*.rules
+  - /etc/prometheus/rules/alerts.rules
 
-scrape_configs: # Flask application metrics
-  - job_name: "flask-app"
+scrape_configs: # FastAPI application metrics
+  - job_name: "fastapi-app"
     scrape_interval: 5s
     static_configs:
-      - targets: ["host.docker.internal:5000"]
+      - targets: ["host.docker.internal:5050"]
         labels:
-          group: "flask-app"
+          group: "fastapi-app"
           service: "weather-prediction-api"
-
   # Prometheus itself
   - job_name: "prometheus"
     scrape_interval: 5s
     static_configs:
-      - targets: ["localhost:9090"]
+      - targets: ["prometheus:9090"]
         labels:
           group: "prometheus"
 

@@ -1,5 +1,0 @@
-2023-07-01 12:00:00,000 - app - INFO - Weather Prediction API started
-2023-07-01 12:01:00,000 - app - INFO - Model loaded successfully
-2023-07-01 12:02:00,000 - app - INFO - Health check passed
-2023-07-01 12:03:00,000 - app - INFO - Prediction: False, Confidence: 0.2500, Inference time: 0.1200s
-2023-07-01 12:03:00,000 - app - WARNING - Low confidence prediction: 0.2500

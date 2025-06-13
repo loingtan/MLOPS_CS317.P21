@@ -19,6 +19,5 @@ COPY . .
 
 EXPOSE 5000
 
-ENV FLASK_APP=app.py
-ENV FLASK_ENV=production
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "4", "app:app"] 
+# Use Uvicorn with Gunicorn as a process manager
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5000", "--workers", "4"]

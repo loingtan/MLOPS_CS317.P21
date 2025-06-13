@@ -1,0 +1,65 @@
+# filepath: c:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\prometheus\rules\alerts.rules
+groups:
+- name: api_alerts
+  rules:
+  - alert: HighErrorRate
+    expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.5
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "High Error Rate"
+      description: "Error rate is above 50% for the last 5 minutes (current value: {{ $value | printf \"%.2f\" }})"
+
+  - alert: HighLatency
+    expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 1.0
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High API Latency"
+      description: "95th percentile latency is above 1s for the last 5 minutes (current value: {{ $value | printf \"%.2f\" }}s)"
+
+  - alert: LowConfidenceScore
+    expr: histogram_quantile(0.5, rate(model_confidence_score_bucket[5m])) < 0.6
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Low Model Confidence"
+      description: "Median confidence score is below 0.6 for the last 5 minutes (current value: {{ $value | printf \"%.2f\" }})"
+        - alert: HighCpuUsage
+    expr: cpu_usage_percent > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High CPU Usage"
+      description: "CPU usage is above 80% for 5 minutes (current value: {{ $value | printf \"%.2f\" }}%)"
+      
+  - alert: HighMemoryUsage
+    expr: memory_usage_bytes / node_memory_MemTotal_bytes * 100 > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High Memory Usage"
+      description: "Memory usage is above 80% for 5 minutes (current value: {{ $value | printf \"%.2f\" }}%)"
+      
+  - alert: HighDiskUsage
+    expr: disk_usage_percent > 85
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High Disk Usage"
+      description: "Disk usage is above 85% for 5 minutes (current value: {{ $value | printf \"%.2f\" }}%)"
+      
+  - alert: HighNetworkIO
+    expr: rate(network_received_bytes_total[5m]) > 1e7 or rate(network_sent_bytes_total[5m]) > 1e7
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High Network I/O"
+      description: "Network I/O is high (>10MB/s) for 5 minutes (current value: {{ $value | printf \"%.2f\" }} bytes/s)"

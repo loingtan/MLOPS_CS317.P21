@@ -11,7 +11,7 @@ import random
 from datetime import datetime
 
 # API endpoint
-BASE_URL = "http://localhost:5000"
+BASE_URL = "http://localhost:5050"
 PREDICT_URL = f"{BASE_URL}/predict"
 HEALTH_URL = f"{BASE_URL}/health"
 METRICS_URL = f"{BASE_URL}/metrics"
@@ -50,29 +50,32 @@ def make_random_data(error_prob=0.0):
     data["Humidity9am"] = random.uniform(40, 95)
     data["Humidity3pm"] = random.uniform(30, 90)
     data["RainToday"] = "Yes" if data["Rainfall"] > 1.0 else "No"
-    
+
     # Add deliberate error conditions based on probability
     if random.random() < error_prob:
-        error_type = random.choice(["missing_field", "invalid_type", "extreme_value"])
-        
+        error_type = random.choice(
+            ["missing_field", "invalid_type", "extreme_value"])
+
         if error_type == "missing_field":
             # Remove a random field
             field_to_remove = random.choice(list(data.keys()))
             del data[field_to_remove]
             print(f"Introducing error: Removed field '{field_to_remove}'")
-            
+
         elif error_type == "invalid_type":
             # Change a numeric field to string
-            numeric_fields = ["MinTemp", "MaxTemp", "Rainfall", "Humidity9am", "Humidity3pm"]
+            numeric_fields = ["MinTemp", "MaxTemp",
+                              "Rainfall", "Humidity9am", "Humidity3pm"]
             field_to_change = random.choice(numeric_fields)
             data[field_to_change] = "invalid-value"
-            print(f"Introducing error: Changed {field_to_change} to string value")
-            
+            print(
+                f"Introducing error: Changed {field_to_change} to string value")
+
         elif error_type == "extreme_value":
             # Set an extreme value that might cause issues
             data["Humidity9am"] = 999.9
             print(f"Introducing error: Set extreme value for Humidity9am")
-            
+
     return data
 
 
@@ -137,7 +140,7 @@ def main():
     if not check_health():
         print("API is not healthy, exiting.")
         return
-    
+
     print("\n===== Test Scenario 1: Normal Operation =====")
     # Make a series of predictions with normal data
     num_requests = 15
@@ -148,37 +151,37 @@ def main():
         print(f"\nRequest {i+1}/{num_requests} (Normal)")
         make_prediction(data)
         time.sleep(0.5)
-    
+
     # Check metrics after normal predictions
     print("\nChecking metrics after normal predictions:")
     check_metrics()
-    
+
     print("\n===== Test Scenario 2: Error Conditions =====")
     # Make some requests with deliberate errors to test error handling
     num_error_requests = 5
     print(f"Making {num_error_requests} requests with deliberate errors...")
-    
+
     for i in range(num_error_requests):
         data = make_random_data(error_prob=1.0)  # Force errors
         print(f"\nRequest {i+1}/{num_error_requests} (With Error)")
         make_prediction(data)
         time.sleep(0.5)
-    
+
     # Check metrics after error predictions
     print("\nChecking metrics after error requests:")
     check_metrics()
-    
+
     print("\n===== Test Scenario 3: Load Test =====")
     # Make rapid requests to simulate load
     num_load_requests = 10
     print(f"Making {num_load_requests} rapid requests...")
-    
+
     for i in range(num_load_requests):
         data = make_random_data(error_prob=0.0)
         print(f"\rLoad request {i+1}/{num_load_requests}", end="")
         make_prediction(data)
         time.sleep(0.1)  # Reduced delay for load testing
-    
+
     print("\n\nChecking metrics after load test:")
     check_metrics()
 

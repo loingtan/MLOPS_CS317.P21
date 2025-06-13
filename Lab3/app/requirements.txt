@@ -6,10 +6,12 @@ numpy==2.2.4
 optuna==4.2.1
 pandas==2.2.3
 scikit_learn==1.6.1
-flask==2.3.3
-gunicorn==21.2.0
-prometheus-client==0.20.0
-prometheus-flask-exporter==0.23.0
+fastapi==0.104.1
+uvicorn==0.23.2
+pydantic==2.4.2
+prometheus-client==0.17.0
+# Not using prometheus-flask-exporter with FastAPI
 psutil==5.9.8
+# Removed starlette-prometheus as we've implemented our own middleware
 # Removed fluent-bit-python as it's not available
 # We'll use the Docker container for Fluent Bit instead

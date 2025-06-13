@@ -1,0 +1,12 @@
+groups:
+  - name: app_errors
+    rules:
+      - alert: HighErrorRate
+        expr: |
+          sum(count_over_time({job="fluentbit"} |= "error" [5m])) > 5
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected"
+          description: "There have been more than 5 error messages in the last 5 minutes"

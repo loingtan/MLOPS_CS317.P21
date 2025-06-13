@@ -16,11 +16,10 @@ generate_errors() {
     for i in $(seq 1 $num_errors); do
         # Send an invalid request to trigger an error
         echo -n "Sending error request $i/$num_errors... "
-        
-        # Invalid JSON request that will cause an error
+          # Invalid JSON request that will cause an error
         curl -s -X POST -H "Content-Type: application/json" \
             -d '{"MinTemp": "invalid", "MaxTemp": "NaN", "invalidField": true}' \
-            http://localhost:5000/predict > /dev/null
+            http://localhost:5050/predict > /dev/null
             
         echo "Done."
         # Wait for specified delay

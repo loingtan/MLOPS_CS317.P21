@@ -1,0 +1,420 @@
+2025-06-10 20:18:44,372 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 20:18:44,386 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 20:18:44,480 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.88.127:5000
+2025-06-10 20:18:44,481 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-10 20:21:23,444 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 20:21:23,445 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 20:21:23,486 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.88.127:5000
+2025-06-10 20:21:23,486 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-10 20:31:53,219 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 20:31:53,230 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 20:31:53,292 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.88.127:5000
+2025-06-10 20:31:53,293 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-10 20:32:00,970 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 20:32:00] "[33mGET / HTTP/1.1[0m" 404 -
+2025-06-10 20:32:01,168 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 20:32:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-10 20:32:06,270 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 20:32:06] "[33mGET /docs HTTP/1.1[0m" 404 -
+2025-06-10 20:32:09,740 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 20:32:09] "[33mGET /docs HTTP/1.1[0m" 404 -
+2025-06-10 20:32:34,691 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 20:32:34] "[33mGET /docs HTTP/1.1[0m" 404 -
+2025-06-10 20:32:34,937 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 20:32:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-10 20:55:19,573 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 20:55:19,576 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 20:55:19,638 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.88.127:5050
+2025-06-10 20:55:19,638 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-10 20:59:37,079 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 20:59:37,080 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 20:59:37,135 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.88.127:5050
+2025-06-10 20:59:37,135 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-10 21:10:54,725 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 21:10:54] "GET /health HTTP/1.1" 200 -
+2025-06-10 21:12:09,117 - __main__ - INFO - Prediction: False, Confidence: 0.0352, Inference time: 0.0238s
+2025-06-10 21:12:09,117 - __main__ - WARNING - Low confidence prediction: 0.0352
+2025-06-10 21:12:09,118 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 21:12:09] "POST /predict HTTP/1.1" 200 -
+2025-06-10 21:14:58,561 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 21:14:58] "[33mGET /docs?id=5f9bb578-578a-4c6f-ae6f-6a3bedc21586&vscodeBrowserReqId=1749564898251 HTTP/1.1[0m" 404 -
+2025-06-10 21:15:31,792 - werkzeug - INFO - 127.0.0.1 - - [10/Jun/2025 21:15:31] "GET /metrics HTTP/1.1" 200 -
+2025-06-10 21:20:04,654 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:20:04,654 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:20:07,410 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:20:07,410 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:21:18,063 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:21:18,063 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:22:24,585 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:22:24,586 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:22:24,734 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:22:24,736 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:22:24,769 - app - INFO - Metrics update thread started
+2025-06-10 21:23:17,384 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:23:17,384 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:23:17,496 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:23:17,498 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:23:17,518 - app - INFO - Metrics update thread started
+2025-06-10 21:25:35,583 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:25:35,584 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:25:35,772 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:25:35,773 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:25:35,810 - app - INFO - Metrics update thread started
+2025-06-10 21:31:34,018 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:31:34,019 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:31:34,199 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:31:34,200 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:31:34,230 - app - INFO - Metrics update thread started
+2025-06-10 21:31:47,809 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:31:47,810 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:31:47,973 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:31:47,975 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:31:48,003 - app - INFO - Metrics update thread started
+2025-06-10 21:32:52,940 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:32:52,943 - __main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:32:52,943 - __main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:32:56,760 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:32:56,762 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:32:56,763 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:32:56,960 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:32:56,961 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:32:56,962 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:32:56,987 - app - INFO - Metrics update thread started
+2025-06-10 21:34:01,424 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:34:01,424 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:34:01,563 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:34:01,563 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:34:01,592 - app - INFO - Metrics update thread started
+2025-06-10 21:34:01,853 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:34:01,855 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:34:01,855 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:34:02,026 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:34:02,028 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:34:02,028 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:34:02,068 - app - INFO - Metrics update thread started
+2025-06-10 21:36:07,950 - app - INFO - Prediction: False, Confidence: 0.1425, Inference time: 0.0048s
+2025-06-10 21:36:07,951 - app - WARNING - Low confidence prediction: 0.1425
+2025-06-10 21:38:41,920 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:38:41,921 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:38:42,094 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:38:42,095 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:38:42,129 - app - INFO - Metrics update thread started
+2025-06-10 21:38:42,485 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:38:42,488 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:38:42,488 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:38:42,731 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:38:42,733 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:38:42,734 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:38:42,856 - app - INFO - Metrics update thread started
+2025-06-10 21:39:19,423 - app - INFO - Application shutting down
+2025-06-10 21:39:19,533 - app - INFO - Application shutting down
+2025-06-10 21:39:58,946 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:39:58,948 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:39:59,121 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:39:59,126 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:39:59,155 - app - INFO - Metrics update thread started
+2025-06-10 21:39:59,477 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:39:59,480 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:39:59,480 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:39:59,705 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:39:59,707 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:39:59,709 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:39:59,813 - app - INFO - Metrics update thread started
+2025-06-10 21:40:12,508 - app - INFO - Application shutting down
+2025-06-10 21:40:12,586 - app - INFO - Application shutting down
+2025-06-10 21:40:48,645 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:40:48,645 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:40:48,815 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:40:48,815 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:40:48,849 - app - INFO - Metrics update thread started
+2025-06-10 21:40:49,138 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:40:49,141 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:40:49,142 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:40:49,310 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:40:49,311 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:40:49,312 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:40:49,344 - app - INFO - Metrics update thread started
+2025-06-10 21:41:14,755 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:14,757 - __main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:41:14,758 - __main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:41:18,563 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:18,566 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:41:18,567 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:41:18,771 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:18,772 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:41:18,772 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:41:18,809 - app - INFO - Metrics update thread started
+2025-06-10 21:41:40,288 - app - INFO - Application shutting down
+2025-06-10 21:41:40,436 - app - INFO - Application shutting down
+2025-06-10 21:41:45,056 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:45,056 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:41:45,214 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:45,216 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:41:45,261 - app - INFO - Metrics update thread started
+2025-06-10 21:41:45,312 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:45,314 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:41:45,315 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:41:45,352 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:45,355 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:41:45,356 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:41:45,474 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:45,475 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:41:45,475 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:41:45,509 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:41:45,510 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:41:45,511 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:41:45,546 - app - INFO - Metrics update thread started
+2025-06-10 21:41:45,573 - app - INFO - Metrics update thread started
+2025-06-10 21:42:36,355 - app - INFO - Application shutting down
+2025-06-10 21:42:36,354 - app - INFO - Application shutting down
+2025-06-10 21:42:36,466 - app - INFO - Application shutting down
+2025-06-10 21:46:18,406 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:18,409 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:46:18,548 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:18,548 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:46:18,567 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:18,569 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:46:18,570 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:46:18,569 - app - INFO - Starting application
+2025-06-10 21:46:18,573 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:18,576 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:46:18,576 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:46:18,576 - app - INFO - Metrics update thread started
+2025-06-10 21:46:18,750 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:18,751 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:46:18,752 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:46:18,754 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:18,755 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:46:18,756 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:46:18,777 - app - INFO - Starting application
+2025-06-10 21:46:18,781 - app - INFO - Starting application
+2025-06-10 21:46:18,789 - app - INFO - Metrics update thread started
+2025-06-10 21:46:18,790 - app - INFO - Metrics update thread started
+2025-06-10 21:46:39,027 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:39,030 - __main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:46:39,030 - __main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:46:42,912 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:42,915 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:46:42,915 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:46:43,070 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:46:43,071 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:46:43,071 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:46:43,095 - app - INFO - Starting application
+2025-06-10 21:46:43,102 - app - INFO - Metrics update thread started
+2025-06-10 21:47:09,127 - app - INFO - Application shutting down
+2025-06-10 21:47:09,301 - app - INFO - Application shutting down
+2025-06-10 21:47:09,301 - app - INFO - Application shutting down
+2025-06-10 21:47:09,332 - app - INFO - Application shutting down
+2025-06-10 21:47:14,223 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:47:14,224 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:47:14,458 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:47:14,460 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:47:14,486 - app - INFO - Starting application
+2025-06-10 21:47:14,497 - app - INFO - Metrics update thread started
+2025-06-10 21:47:14,659 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:47:14,660 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:47:14,661 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:47:14,662 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:47:14,663 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:47:14,663 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:47:14,684 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:47:14,687 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:47:14,687 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:47:14,823 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:47:14,824 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:47:14,824 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:47:14,825 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:47:14,826 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:47:14,827 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:47:14,836 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:47:14,837 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:47:14,837 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:47:14,843 - app - INFO - Starting application
+2025-06-10 21:47:14,847 - app - INFO - Starting application
+2025-06-10 21:47:14,853 - app - INFO - Metrics update thread started
+2025-06-10 21:47:14,855 - app - INFO - Metrics update thread started
+2025-06-10 21:47:14,872 - app - INFO - Starting application
+2025-06-10 21:47:14,879 - app - INFO - Metrics update thread started
+2025-06-10 21:53:36,308 - app - INFO - Application shutting down
+2025-06-10 21:53:36,308 - app - INFO - Application shutting down
+2025-06-10 21:53:36,418 - app - INFO - Application shutting down
+2025-06-10 21:53:36,449 - app - INFO - Application shutting down
+2025-06-10 21:53:41,485 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:53:41,487 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:53:41,653 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:53:41,653 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 21:53:41,689 - app - INFO - Starting application
+2025-06-10 21:53:41,699 - app - INFO - Metrics update thread started
+2025-06-10 21:53:42,256 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:53:42,260 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:53:42,260 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:53:42,303 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:53:42,306 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:53:42,307 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:53:42,350 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:53:42,353 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:53:42,353 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-10 21:53:42,444 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:53:42,445 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:53:42,445 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:53:42,468 - app - INFO - Starting application
+2025-06-10 21:53:42,481 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:53:42,483 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:53:42,483 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:53:42,492 - app - INFO - Metrics update thread started
+2025-06-10 21:53:42,518 - app - INFO - Starting application
+2025-06-10 21:53:42,525 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 21:53:42,526 - app - INFO - Metrics update thread started
+2025-06-10 21:53:42,527 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 21:53:42,527 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 21:53:42,546 - app - INFO - Starting application
+2025-06-10 21:53:42,554 - app - INFO - Metrics update thread started
+2025-06-10 22:00:45,098 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:00:45,100 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 22:00:45,101 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 22:00:45,125 - app - INFO - Starting application
+2025-06-10 22:00:45,132 - app - INFO - Metrics update thread started
+2025-06-10 22:21:39,608 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:21:39,610 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:21:43,079 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:21:43,082 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:21:43,291 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:21:43,293 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:21:43,322 - app - INFO - Starting application
+2025-06-10 22:21:43,333 - app - INFO - Metrics update thread started
+2025-06-10 22:24:32,351 - app - INFO - Application shutting down
+2025-06-10 22:24:40,484 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:24:40,486 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:24:40,619 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:24:40,621 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:24:40,639 - app - INFO - Starting application
+2025-06-10 22:24:40,647 - app - INFO - Metrics update thread started
+2025-06-10 22:28:06,980 - app - INFO - Application shutting down
+2025-06-10 22:28:10,279 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:28:10,280 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:28:10,422 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:28:10,422 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:28:10,443 - app - INFO - Starting application
+2025-06-10 22:28:10,488 - app - INFO - Metrics update thread started
+2025-06-10 15:39:12,067 - app - INFO - Model loaded successfully from /app/model.pkl
+2025-06-10 15:39:12,075 - app - INFO - Preprocessor loaded successfully from /app/preprocessing/model.pkl
+2025-06-10 15:39:12,084 - app - INFO - Starting application
+2025-06-10 15:39:12,086 - app - INFO - Metrics update thread started
+2025-06-10 22:42:07,485 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:42:07,486 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:42:09,934 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:42:09,935 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:42:10,068 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 22:42:10,069 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-10 22:42:10,143 - app - INFO - Starting application
+2025-06-10 22:42:10,150 - app - INFO - Metrics update thread started
+2025-06-10 23:18:48,298 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-10 23:18:48,301 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-10 23:18:48,301 - app - WARNING - Application started without a valid preprocessor
+2025-06-10 23:18:48,320 - app - INFO - Starting application
+2025-06-10 23:18:48,327 - app - INFO - Metrics update thread started
+2025-06-11 01:14:53,777 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-11 01:14:53,778 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-11 01:14:53,778 - app - WARNING - Application started without a valid preprocessor
+2025-06-11 01:14:53,804 - app - INFO - Starting application
+2025-06-11 01:14:53,812 - app - INFO - Metrics update thread started
+2025-06-11 01:18:27,535 - app - INFO - Application shutting down
+2025-06-11 01:18:36,785 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-11 01:18:36,787 - __main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-11 01:18:36,787 - __main__ - WARNING - Application started without a valid preprocessor
+2025-06-11 01:18:40,620 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-11 01:18:40,622 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-11 01:18:40,622 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-11 01:18:40,787 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-11 01:18:40,788 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-11 01:18:40,789 - app - WARNING - Application started without a valid preprocessor
+2025-06-11 01:18:40,807 - app - INFO - Starting application
+2025-06-11 01:18:40,815 - app - INFO - Metrics update thread started
+2025-06-12 22:00:25,513 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-12 22:00:25,526 - __main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-12 22:00:25,526 - __main__ - WARNING - Application started without a valid preprocessor
+2025-06-12 22:00:28,983 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-12 22:00:28,985 - __mp_main__ - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-12 22:00:28,986 - __mp_main__ - WARNING - Application started without a valid preprocessor
+2025-06-12 22:00:29,157 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-12 22:00:29,158 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-12 22:00:29,159 - app - WARNING - Application started without a valid preprocessor
+2025-06-12 22:00:29,177 - app - INFO - Starting application
+2025-06-12 22:00:29,185 - app - INFO - Metrics update thread started
+2025-06-12 22:13:33,457 - app - INFO - Application shutting down
+2025-06-12 22:14:35,039 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-12 22:14:35,040 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-12 22:14:38,223 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-12 22:14:38,224 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-12 22:14:38,354 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-12 22:14:38,356 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-12 22:14:38,375 - app - INFO - Starting application
+2025-06-12 22:14:38,380 - app - INFO - Metrics update thread started
+2025-06-12 23:12:10,304 - app - ERROR - Error during prediction: Input X contains NaN.
+LogisticRegression does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+2025-06-12 23:12:10,305 - app - ERROR - Prediction error: 
+2025-06-13 17:20:00,000 - test - INFO - Manual test log entry
+2025-06-13 00:13:11,000 - test - INFO - Current time test log entry
+2025-06-13 00:14:22,000 - test - INFO - New test after Loki config update
+2025-06-13 00:15:28,000 - test - INFO - Final test after Loki restart
+2025-06-13 00:15:45,000 - test - INFO - Confirmation test
+2025-06-13 00:19:22,000 - test - INFO - Test log for Grafana visibility
+2025-06-13 00:21:40,000 - test - INFO - Test after fixing record_modifier
+2025-06-13 00:30:41,000 - test - INFO - New logging test with simplified Loki config
+2025-06-13 00:33:19,000 - test - INFO - Final test log for Grafana verification
+2025-06-13 00:54:40,000 - test - INFO - Testing after Fluent Bit and Loki restart
+2025-06-13 00:57:44,000 - debug - INFO - Test log for immediate Loki check
+2025-06-13 00:58:54,000 - test - INFO - Testing with source=fluent-bit label
+2025-06-13 01:05:19,000 - test - INFO - New test after complete restart
+2025-06-13 01:18:50,436 - __main__ - INFO - Test log entry for Grafana visualization
+2025-06-13 01:18:50,439 - __main__ - ERROR - Test error log for alerting testing
+2025-06-13 01:22:01,048 - __main__ - INFO - Test log entry 1 for monitoring
+2025-06-13 01:22:01,051 - __main__ - INFO - Test log entry 2 for monitoring
+2025-06-13 01:22:01,078 - __main__ - INFO - Test log entry 3 for monitoring
+2025-06-13 01:22:01,095 - __main__ - INFO - Test log entry 4 for monitoring
+2025-06-13 01:22:01,117 - __main__ - INFO - Test log entry 5 for monitoring
+2025-06-13 01:22:01,141 - __main__ - INFO - Test log entry 6 for monitoring
+2025-06-13 01:22:01,162 - __main__ - INFO - Test log entry 7 for monitoring
+2025-06-13 01:22:01,179 - __main__ - INFO - Test log entry 8 for monitoring
+2025-06-13 01:22:01,202 - __main__ - INFO - Test log entry 9 for monitoring
+2025-06-13 01:22:01,225 - __main__ - INFO - Test log entry 10 for monitoring
+2025-06-13 01:26:07,788 - __main__ - ERROR - Critical error 1 in the prediction module
+2025-06-13 01:26:07,790 - __main__ - ERROR - Critical error 2 in the prediction module
+2025-06-13 01:26:07,812 - __main__ - ERROR - Critical error 3 in the prediction module
+2025-06-13 01:26:07,836 - __main__ - ERROR - Critical error 4 in the prediction module
+2025-06-13 01:26:07,869 - __main__ - ERROR - Critical error 5 in the prediction module
+2025-06-13 01:33:33,591 - __main__ - WARNING - Weather data processing warning 1 - missing temperature values
+2025-06-13 01:33:33,593 - __main__ - WARNING - Weather data processing warning 2 - missing temperature values
+2025-06-13 01:33:33,630 - __main__ - WARNING - Weather data processing warning 3 - missing temperature values
+2025-06-13 01:33:33,658 - __main__ - WARNING - Weather data processing warning 4 - missing temperature values
+2025-06-13 01:33:33,681 - __main__ - WARNING - Weather data processing warning 5 - missing temperature values
+2025-06-13 01:40:19,649 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 01:40:19,652 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 01:40:22,830 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 01:40:22,832 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 01:40:22,970 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 01:40:22,971 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 01:40:22,993 - app - INFO - Starting application
+2025-06-13 01:40:23,007 - app - INFO - Metrics update thread started
+2025-06-13 02:09:04,511 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 02:09:04,515 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 02:09:07,953 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 02:09:07,953 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 02:09:08,087 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 02:09:08,089 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 02:09:08,162 - app - INFO - Starting application
+2025-06-13 02:09:08,170 - app - INFO - Metrics update thread started
+2025-06-13 02:20:10,809 - __main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 02:20:10,812 - __main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 02:20:15,093 - __mp_main__ - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 02:20:15,095 - __mp_main__ - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 02:20:15,271 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+2025-06-13 02:20:15,274 - app - INFO - Preprocessor loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\preprocessing\model.pkl
+2025-06-13 02:20:15,434 - app - INFO - Starting application
+2025-06-13 02:20:15,443 - app - INFO - Metrics update thread started

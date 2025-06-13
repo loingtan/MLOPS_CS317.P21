@@ -1,0 +1,69 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\09398\\Subject\\Mlops\\MLOPS_CS317.P21\\Lab3\\app']
+INFO:     Uvicorn running on http://0.0.0.0:5050 (Press CTRL+C to quit)
+INFO:     Started reloader process [10376] using StatReload
+C:\Users\09398\miniconda3\envs\cs431\Lib\site-packages\sklearn\base.py:440: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.6.1 when using version 1.7.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+2025-06-11 01:14:53,777 - app - INFO - Model loaded successfully from C:\Users\09398\Subject\Mlops\MLOPS_CS317.P21\Lab3\app\model.pkl
+C:\Users\09398\miniconda3\envs\cs431\Lib\site-packages\sklearn\base.py:440: InconsistentVersionWarning: Trying to unpickle estimator SimpleImputer from version 1.6.1 when using version 1.7.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+C:\Users\09398\miniconda3\envs\cs431\Lib\site-packages\sklearn\base.py:440: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.6.1 when using version 1.7.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+C:\Users\09398\miniconda3\envs\cs431\Lib\site-packages\sklearn\base.py:440: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.6.1 when using version 1.7.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+C:\Users\09398\miniconda3\envs\cs431\Lib\site-packages\sklearn\base.py:440: InconsistentVersionWarning: Trying to unpickle estimator OneHotEncoder from version 1.6.1 when using version 1.7.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+2025-06-11 01:14:53,778 - app - ERROR - Error loading preprocessor: Can't get attribute '_RemainderColsList' on <module 'sklearn.compose._column_transformer' from 'C:\\Users\\09398\\miniconda3\\envs\\cs431\\Lib\\site-packages\\sklearn\\compose\\_column_transformer.py'>
+2025-06-11 01:14:53,778 - app - WARNING - Application started without a valid preprocessor
+INFO:     Started server process [24052]
+INFO:     Waiting for application startup.
+2025-06-11 01:14:53,804 - app - INFO - Starting application
+2025-06-11 01:14:53,812 - app - INFO - Metrics update thread started
+INFO:     Application startup complete.
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /metrics HTTP/1.1" 200 OK

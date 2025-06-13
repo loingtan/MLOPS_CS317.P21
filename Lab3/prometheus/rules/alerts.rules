@@ -1,3 +1,4 @@
+# Weather Prediction API Alert Rules
 groups:
 - name: api_alerts
   rules:
@@ -27,7 +28,7 @@ groups:
     annotations:
       summary: "Low Model Confidence"
       description: "Median confidence score is below 0.6 for the last 5 minutes (current value: {{ $value | printf \"%.2f\" }})"
-      
+
   - alert: HighCpuUsage
     expr: cpu_usage_percent > 80
     for: 5m
@@ -36,7 +37,7 @@ groups:
     annotations:
       summary: "High CPU Usage"
       description: "CPU usage is above 80% for 5 minutes (current value: {{ $value | printf \"%.2f\" }}%)"
-
+      
   - alert: HighMemoryUsage
     expr: memory_usage_bytes / node_memory_MemTotal_bytes * 100 > 80
     for: 5m
@@ -45,7 +46,8 @@ groups:
     annotations:
       summary: "High Memory Usage"
       description: "Memory usage is above 80% for 5 minutes (current value: {{ $value | printf \"%.2f\" }}%)"
-        - alert: HighDiskUsage
+      
+  - alert: HighDiskUsage
     expr: disk_usage_percent > 85
     for: 5m
     labels:
